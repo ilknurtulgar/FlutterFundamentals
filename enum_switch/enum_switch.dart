@@ -47,12 +47,6 @@ void placeToTeam(Map<Team, int> maps, List<NeonAcademyMember> list){
   }
 }
 
-// void printMaps<T>(Map<T, List<T>> maps ){
-//   maps.forEach((key, value){
-//     print("${key} : ${value}");
-//   });
-// }
-
 void printWhoIs(){
   for (var member in members) {
 
