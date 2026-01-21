@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'struct_class.dart';
 
 List<NeonAcademyMember> members = [

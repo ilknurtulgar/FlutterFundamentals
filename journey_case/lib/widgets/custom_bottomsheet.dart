@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/model/journey_model.dart';
-import 'package:shared_preferences/utils/color_util.dart';
 
+import '../model/journey_model.dart';
+import '../utils/color_util.dart';
 import '../utils/text_util.dart';
 
 class CustomBottomsheet extends StatefulWidget {
@@ -83,38 +83,76 @@ class _CustomBottomsheetState extends State<CustomBottomsheet> {
               ],
             ),
 
-            ElevatedButton(
-              onPressed: () {
-                if(widget.titleController.text.isEmpty && widget.countController.text.isEmpty){
-                  showDialog(context: context, builder: (_) => AlertDialog(title: Text(TextUtil.emptyForm),actions: [
-                    TextButton(onPressed: () => Navigator.pop(context), child: Text(TextUtil.approve)),
-                  ],) );
-                  return;
-                }
+            Align(
+              alignment: Alignment.centerRight,
+              child: ElevatedButton(
+                onPressed: () {
+                  if (widget.titleController.text.isEmpty &&
+                      widget.countController.text.isEmpty) {
+                    showDialog(
+                      context: context,
+                      builder: (_) => AlertDialog(
+                        title: Text(TextUtil.emptyForm),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(TextUtil.approve),
+                          ),
+                        ],
+                      ),
+                    );
+                    return;
+                  }
 
-                if(widget.titleController.text.isEmpty){
-                  showDialog(context: context, builder: (_) => AlertDialog(title: Text(TextUtil.emptyName),actions: [
-                    TextButton(onPressed: () => Navigator.pop(context), child: Text(TextUtil.approve)),
-                  ],) );
-                  return;
-                }
+                  if (widget.titleController.text.isEmpty) {
+                    showDialog(
+                      context: context,
+                      builder: (_) => AlertDialog(
+                        title: Text(TextUtil.emptyName),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(TextUtil.approve),
+                          ),
+                        ],
+                      ),
+                    );
+                    return;
+                  }
 
-                if(int.tryParse(widget.countController.text) == null){
-                  showDialog(context: context, builder: (_) => AlertDialog(title: Text(TextUtil.invalidInput),actions: [
-                    TextButton(onPressed: () => Navigator.pop(context), child: Text(TextUtil.approve)),
-                  ],) );
-                  return;
-                }
+                  if (int.tryParse(widget.countController.text) == null) {
+                    showDialog(
+                      context: context,
+                      builder: (_) => AlertDialog(
+                        title: Text(TextUtil.invalidInput),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(TextUtil.approve),
+                          ),
+                        ],
+                      ),
+                    );
+                    return;
+                  }
 
-                final model = JourneyModel(
-                  isGo: isChecked,
-                  count: int.tryParse(widget.countController.text) ?? 0,
-                  title: widget.titleController.text,
-                );
-               
-                Navigator.pop(context, model);
-              },
-              child: Text(TextUtil.saveButton),
+                  final model = JourneyModel(
+                    isGo: isChecked,
+                    count: int.tryParse(widget.countController.text) ?? 0,
+                    title: widget.titleController.text,
+                  );
+
+                  Navigator.pop(context, model);
+                },
+                child: Text(
+                  TextUtil.saveButton,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
             ),
           ],
         ),
