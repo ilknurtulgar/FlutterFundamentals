@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="notification_center"
+        android:label="alert_controllers"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -43,4 +43,3 @@
         </intent>
     </queries>
 </manifest>
-<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>

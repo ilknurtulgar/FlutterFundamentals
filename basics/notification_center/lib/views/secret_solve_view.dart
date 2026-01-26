@@ -32,7 +32,6 @@ class _SecretSolveViewState extends State<SecretSolveView> {
         "SİSTEM",
         "Mesaj Deşifre edildi: ${TextUtil.secret}",
       );
-      print("çözüldü");
 
       Future.delayed(const Duration(seconds: 5), (){
         LocalNotificationService.cancelNotification(0);
