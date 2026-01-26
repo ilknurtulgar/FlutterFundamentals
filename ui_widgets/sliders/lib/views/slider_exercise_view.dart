@@ -37,7 +37,7 @@ class _SliderExerciseViewState extends State<SliderExerciseView> {
               if( _value < 75)
                   Image.asset('assets/images/yesil.png',),
               if(_value >= 75)
-                Image.asset('assets/images/kirmizi.png')
+                Image.asset('assets/images/red.png')
               
             ],
           ),

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'views/slider_exercise_action_view.dart';
-import 'views/slider_exercise_div_view.dart';
 import 'views/slider_exercise_view.dart';
 
 void main() {
@@ -20,7 +18,7 @@ class _SlidersAppState extends State<SlidersApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SliderExerciseActionView(),
+      home: SliderExerciseView(),
     );
   }
 }
