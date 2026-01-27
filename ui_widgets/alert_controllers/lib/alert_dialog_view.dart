@@ -95,6 +95,7 @@ class _AlertDialogViewState extends State<AlertDialogView> {
                     builder: (context) => AlertDialog(
                       title: Text("Alert dialog box"),
                       content: Column(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Text("Lütfen gizli notunuzu aşağıya yazın:"),
                           TextField(
