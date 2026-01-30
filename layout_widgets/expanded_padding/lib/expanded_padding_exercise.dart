@@ -33,7 +33,7 @@ class _ExpandedPaddingExerciseState extends State<ExpandedPaddingExercise> {
             return InkWell(
               onTap: () => print("object"),
               child: Column(
-                children: [
+                children: [,""
                   Expanded(
                     flex: 4,
                     child: ClipRRect(
